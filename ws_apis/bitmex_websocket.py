@@ -11,7 +11,7 @@ class BitMEXWebSocket(BaseWebSocket):
         super().__init__(endpoint, symbols, callback_method)
 
     def get_url(self):
-        subscriptions = ['trade:' + symbol for symbol in self.symbols]
+        subscriptions = ['tradeBin1m:' + symbol for symbol in self.symbols]
 
         url_parts = list(urllib.parse.urlparse(self.endpoint))
         url_parts[0] = url_parts[0].replace('http', 'ws')
